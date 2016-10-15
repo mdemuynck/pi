@@ -9,22 +9,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <a class='btn btn-lg btn-primary' href="rptoggle">Power</a>
+                    <button class='btn btn-lg btn-primary' href="rptoggle">Power</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <a class='btn btn-lg btn-danger' href="rvup">Vol +</a>
-                    <a class='btn btn-lg btn-success' href="rvdown">Vol -</a>
+                    <button class='btn btn-lg btn-danger' href="rvup">Vol +</button>
+                    <button class='btn btn-lg btn-success' href="rvdown">Vol -</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <a class='btn btn-lg btn-warning' href="r1">StuBru</a>
-                    <a class='btn btn-lg btn-warning' href="r2">Radio 1</a>
-                    <a class='btn btn-lg btn-warning' href="r3">3 FM</a>
+                    <button class='btn btn-lg btn-warning' href="r1">StuBru</button>
+                    <button class='btn btn-lg btn-warning' href="r2">Radio 1</button>
+                    <button class='btn btn-lg btn-warning' href="r3">3 FM</button>
                 </div>
             </div>
         </div>
+        <script>
+            $(button).click(function(btn){
+                $.get(btn.attr("href"));
+            });
+        </script>
     </body>
 </html>
