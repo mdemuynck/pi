@@ -27,8 +27,8 @@
             </div>
         </div>
         <script>
-            $(button).click(function(btn){
-                $.get(btn.attr("href"));
+            $("button").click(function(e){
+                $.get($(e.target).attr("href"));
             });
         </script>
     </body>
