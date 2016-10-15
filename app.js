@@ -8,7 +8,32 @@ app.get('/', function(req, res){
 
 app.get('/rptoggle', function(req, res){
 	irsend('KEY_POWER');
-	return res.send('ok');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/rvup', function(req, res){
+	irsend('KEY_VOLUMEUP');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/rvdown', function(req, res){
+	irsend('KEY_VOLUMEDOWN');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/r1', function(req, res){
+	irsend('KEY_1');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/r2', function(req, res){
+	irsend('KEY_2');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/r3', function(req, res){
+	irsend('KEY_3');
+	res.sendFile('index.html', {root: __dirname});
 });
 
 function irsend(cmd){
