@@ -1,0 +1,66 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.9.0-pre1(default) on Mon Oct  6 19:30:35 2014
+#
+# contributed by 
+#
+# brand:                       /home/pi/lircd.conf.conf
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  Philips
+  flags RAW_CODES|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  gap          111073
+
+      begin raw_codes
+
+          name KEY_POWER
+             2719     824     496     826     551     302
+              558     352    1408    1229     545     298
+              567     344     958     834     972     808
+              943     847     548     305     587     301
+              558     355     969     387     500     824
+              525     350     510
+
+          name KEY_VOLUMEUP
+              934     784     943     782     944     783
+             1785     816     951     784     938     781
+              945     792     947    1631    1786     828
+              935     778     947     779     947
+
+          name KEY_VOLUMEDOWN
+              966     754    1814    1636    1815     786
+              980     745     962     768     952     785
+              952    1628    1787     811     951     776
+              958    1621     942
+
+          name KEY_1
+              961     752     948     781    1818    1633
+              972     755     942     783    1789     825
+              949     780     947     778     950     774
+              948     779     924    1655     916
+
+          name KEY_2
+              955     761    1808     787     949    1628
+              953     775     944     785    1808     803
+              947     780     947     777     950     783
+              945    1629    1813
+
+          name KEY_3
+              962     757     946     780    1814    1638
+              952     776     944     783    1811     800
+              948     778     920     807     948     782
+              918    1657     946     781     915
+
+      end raw_codes
+
+end remote
