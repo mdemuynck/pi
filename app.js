@@ -3,18 +3,22 @@ var child = require('child_process');
 var app = express();
 
 app.get('/', function(req, res){
-	res.send('commands');
+	res.sendFile('index.html');
 });
 
 app.get('/rptoggle', function(req, res){
-	child.exec('irsend SEND_ONCE Philips KEY_POWER', (err) => {
+	irsend('KEY_POWER');
+	return res.send('ok');
+});
+
+function irsend(cmd){
+    child.exec('irsend SEND_ONCE Philips ' + cmd, (err) => {
 		if (err){
 			console.log('exec error: ${err}');
 			return;
 		}
 	});
-	return res.send('ok');
-}); 
+};
 
 var port = 8001;
 app.listen(port, function(){
