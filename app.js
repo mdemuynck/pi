@@ -40,9 +40,13 @@ app.get('/r3', function(req, res){
 });
 
 function irsend(cmd){
-    child.exec('irsend SEND_ONCE Philips ' + cmd, (err) => {
+    child.exec('irsend SEND_ONCE Philips ' + cmd, (err, stdout, stderr) => {
 		if (err){
 			console.log('exec error: ${err}');
+			return;
+		}
+		if (stdout) {
+			console.log('exec success: ${stdout}');
 			return;
 		}
 	});
