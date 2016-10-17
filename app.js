@@ -1,6 +1,9 @@
 var express = require('express');
+var favicon = require('serve-favicon');
 var child = require('child_process');
 var app = express();
+
+app.use(favicon(__dirname + '/img/favicon.png'));
 
 app.get('/', function(req, res){
 	res.sendFile('index.html', {root: __dirname});
