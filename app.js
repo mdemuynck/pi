@@ -14,11 +14,6 @@ app.get('/rptoggle', function(req, res){
 	res.sendFile('index.html', {root: __dirname});
 });
 
-app.get('/rvup', function(req, res){
-	irsend('KEY_VOLUMEUP');
-	res.sendFile('index.html', {root: __dirname});
-});
-
 app.get('/aux', function(req, res){
 	irsend('KEY_AUX');
 	res.sendFile('index.html', {root: __dirname});
@@ -31,6 +26,11 @@ app.get('/radio', function(req, res){
 
 app.get('/cd', function(req, res){
 	irsend('KEY_CD');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/rvup', function(req, res){
+	irsend('KEY_VOLUMEUP');
 	res.sendFile('index.html', {root: __dirname});
 });
 
