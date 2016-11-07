@@ -19,25 +19,31 @@ app.get('/rvup', function(req, res){
 	res.sendFile('index.html', {root: __dirname});
 });
 
+app.get('/aux', function(req, res){
+	irsend('KEY_AUX');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/radio', function(req, res){
+	irsend('KEY_RADIO');
+	res.sendFile('index.html', {root: __dirname});
+});
+
+app.get('/cd', function(req, res){
+	irsend('KEY_CD');
+	res.sendFile('index.html', {root: __dirname});
+});
+
 app.get('/rvdown', function(req, res){
 	irsend('KEY_VOLUMEDOWN');
 	res.sendFile('index.html', {root: __dirname});
 });
 
-app.get('/r1', function(req, res){
-	irsend('KEY_1');
+app.get('/station/:number', function(req, res){
+    irsend('KEY_' + req.params.number);
 	res.sendFile('index.html', {root: __dirname});
 });
 
-app.get('/r2', function(req, res){
-	irsend('KEY_2');
-	res.sendFile('index.html', {root: __dirname});
-});
-
-app.get('/r3', function(req, res){
-	irsend('KEY_3');
-	res.sendFile('index.html', {root: __dirname});
-});
 
 function irsend(cmd){
     child.exec('irsend SEND_ONCE Philips ' + cmd, (err, stdout, stderr) => {
