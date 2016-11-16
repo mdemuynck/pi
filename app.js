@@ -10,6 +10,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/rptoggle', function(req, res){
+    console.log("KEY_POWER");
 	irsend('KEY_POWER');
 	res.sendFile('index.html', {root: __dirname});
 });
