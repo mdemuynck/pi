@@ -53,7 +53,7 @@ function irsend(cmd){
 			return;
 		}
 		if (stdout) {
-			console.log('exec success: ' +  JSON.stringify(stdout);
+			console.log('exec success: ' +  JSON.stringify(stdout));
 			return;
 		}
 	});
