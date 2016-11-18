@@ -49,11 +49,11 @@ app.get('/station/:number', function(req, res){
 function irsend(cmd){
     child.exec('irsend SEND_ONCE Philips ' + cmd, (err, stdout, stderr) => {
 		if (err){
-			console.log('exec error: ${err}');
+			console.log('exec error: ' + JSON.stringify(err));
 			return;
 		}
 		if (stdout) {
-			console.log('exec success: ${stdout}');
+			console.log('exec success: ' +  JSON.stringify(stdout});
 			return;
 		}
 	});
