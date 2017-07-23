@@ -1,9 +1,13 @@
 var express = require('express');
 var favicon = require('serve-favicon');
 var child = require('child_process');
+var internetradio = require('node-internet-radio');
+var stream = "http://mp3.streampower.be/stubru-high.mp3";
+
 var app = express();
 
 app.use(favicon(__dirname + '/img/favicon.png'));
+var auxenabled = false;
 
 app.get('/', function(req, res){
 	res.sendFile('index.html', {root: __dirname});
@@ -16,7 +20,8 @@ app.get('/rptoggle', function(req, res){
 });
 
 app.get('/aux', function(req, res){
-	irsend('KEY_AUX');
+    irsend('KEY_AUX');
+    auxenabled != auxenabled;
 	res.sendFile('index.html', {root: __dirname});
 });
 
@@ -40,9 +45,17 @@ app.get('/rvdown', function(req, res){
 	res.sendFile('index.html', {root: __dirname});
 });
 
-app.get('/station/:number', function(req, res){
-    irsend('KEY_' + req.params.number);
-	res.sendFile('index.html', {root: __dirname});
+app.get('/station/:number', function (req, res) {
+    if (auxenabled) {
+        //stream from the net
+        internetradio.getStationInfo(stream, function (error, station) {
+            console.log(station);
+        });
+    } else {
+        //play FM
+        irsend('KEY_' + req.params.number);
+        res.sendFile('index.html', { root: __dirname });
+    }
 });
 
 
