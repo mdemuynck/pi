@@ -23,6 +23,7 @@ app.get('/aux', function(req, res){
     irsend('KEY_AUX');
     auxenabled != auxenabled;
      console.log("KEY_AUX");
+     console.log("auxenabled: " + auxenabled);
 	res.sendFile('index.html', {root: __dirname});
 });
 
