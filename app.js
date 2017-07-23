@@ -1,7 +1,8 @@
 var express = require('express');
 var favicon = require('serve-favicon');
 var child = require('child_process');
-var internetradio = require('node-internet-radio');
+var Streamplayer = require('stream-player');
+var internetradio = new Streamplayer();
 var stream = "http://mp3.streampower.be/stubru-high.mp3";
 
 var app = express();
@@ -52,9 +53,8 @@ app.get('/station/:number', function (req, res) {
     console.log("stream: " + stream);
     //if (auxenabled) {
         //stream from the net
-        internetradio.getStationInfo(stream, function (error, station) {
-            console.log(station);
-        },internetradio.StreamSource.STREAM);
+        internetradio.add(stream);
+        internetradio.play();
     /*} else {
         //play FM
         irsend('KEY_' + req.params.number);

@@ -11,6 +11,6 @@
   "dependencies": {
     "express": "^4.14.0",
     "serve-favicon": "^2.3.2",
-    "node-internet-radio": "^0.1.5"
+    "stream-player": "^0.3.0"
   }
 }
