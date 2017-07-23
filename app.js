@@ -22,6 +22,7 @@ app.get('/rptoggle', function(req, res){
 app.get('/aux', function(req, res){
     irsend('KEY_AUX');
     auxenabled != auxenabled;
+     console.log("KEY_AUX");
 	res.sendFile('index.html', {root: __dirname});
 });
 
@@ -46,6 +47,8 @@ app.get('/rvdown', function(req, res){
 });
 
 app.get('/station/:number', function (req, res) {
+    console.log("auxenabled: " + auxenabled);
+    console.log("stream: " + stream);
     if (auxenabled) {
         //stream from the net
         internetradio.getStationInfo(stream, function (error, station) {
