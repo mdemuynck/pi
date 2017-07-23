@@ -54,7 +54,7 @@ app.get('/station/:number', function (req, res) {
         //stream from the net
         internetradio.getStationInfo(stream, function (error, station) {
             console.log(station);
-        });
+        },internetradio.StreamSource.STREAM);
     /*} else {
         //play FM
         irsend('KEY_' + req.params.number);
