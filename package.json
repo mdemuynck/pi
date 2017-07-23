@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "serve-favicon": "^2.3.2",
-    "stream-player": "^0.3.0"
+    "serve-favicon": "^2.3.2"
   }
 }
