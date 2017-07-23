@@ -50,16 +50,16 @@ app.get('/rvdown', function(req, res){
 app.get('/station/:number', function (req, res) {
     console.log("auxenabled: " + auxenabled);
     console.log("stream: " + stream);
-    if (auxenabled) {
+    //if (auxenabled) {
         //stream from the net
         internetradio.getStationInfo(stream, function (error, station) {
             console.log(station);
         });
-    } else {
+    /*} else {
         //play FM
         irsend('KEY_' + req.params.number);
         res.sendFile('index.html', { root: __dirname });
-    }
+    }*/
 });
 
 
