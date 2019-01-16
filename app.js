@@ -1,9 +1,6 @@
 var express = require('express');
 var favicon = require('serve-favicon');
 var child = require('child_process');
-var internetradio = require('node-internet-radio');
-var stream = "http://mp3.streampower.be/stubru-high.mp3";
-
 var app = express();
 
 app.use(favicon(__dirname + '/img/favicon.png'));
