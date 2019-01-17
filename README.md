@@ -6,7 +6,7 @@ SETUP
 - git clone <this repository>
 - go into directory
 - npm install
-- install lirc, see http://alexba.in/blog/2013/01/06/setting-up-lirc-on-the-raspberrypi/
+- install lirc, see https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-with-lirc-2fd581
 - copy the Philips config file: cp Philips.conf /etc/lirc/lircd.conf
 - reboot 
 - start the webserver. Goto the installdirectory and start app.js by node app.js 
